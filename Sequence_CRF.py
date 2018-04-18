@@ -23,7 +23,7 @@ for t in docs2:
         docs.append(doc)
         doc = []
 
-print(docs)
+
 
 data = []
 for i, doc in enumerate(docs):
@@ -102,7 +102,7 @@ X = [extract_features(doc) for doc in data]
 y = [get_labels(doc) for doc in data]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
-trainer = pycrfsuite.Trainer(verbose=True)
+trainer = pycrfsuite.Trainer(verbose=False)
 
 # Submit training data to the trainer
 for xseq, yseq in zip(X_train, y_train):
